@@ -15,7 +15,7 @@
  */
 
 /* Write your solution here */
-
+void fib(int * seq_ptr[], int count);
 
 int main(int argc, char **argv) {
     /* do not change this main function */
@@ -28,4 +28,21 @@ int main(int argc, char **argv) {
     }
     free(fib_sequence);
     return 0;
+}
+
+void fib(int **seq_ptr, int count){
+    *seq_ptr = malloc(count * sizeof(int));
+    for(int i = 0; i < count; i++){
+        if(i == 0){
+            **seq_ptr = 0;
+            
+         } 
+        else if(i == 1){
+            (*seq_ptr)[i] = 1;
+        }
+        else{
+            (*seq_ptr)[i] = (*seq_ptr)[i-2] + (*seq_ptr)[i-1];
+            
+        }
+    }
 }
